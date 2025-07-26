@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Natural wellness color palette */
+  --background: #F8F6F3; /* Light beige/off-white */
+  --foreground: #3A4A3A; /* Dark green-gray for text */
+  --card: #FFFFFF;
+  --card-foreground: #3A4A3A;
+  --popover: #FFFFFF;
+  --popover-foreground: #3A4A3A;
+  --primary: #6B7F6B; /* Deeper green - primary */
+  --primary-foreground: #FFFFFF;
+  --secondary: #A8B4A0; /* Soft green - secondary */
+  --secondary-foreground: #3A4A3A;
+  --muted: #E8E6E1; /* Muted beige */
+  --muted-foreground: #6B7A6B;
+  --accent: #C8A89A; /* Soft terracotta - accent */
+  --accent-foreground: #3A4A3A;
+  --destructive: #D4756B; /* Muted red */
+  --border: #E0DDD6; /* Light border */
+  --input: #F0EDE8; /* Input background */
+  --ring: #A8B4A0; /* Focus ring */
+  --chart-1: #6B7F6B;
+  --chart-2: #A8B4A0;
+  --chart-3: #C8A89A;
+  --chart-4: #8C7B6F;
+  --chart-5: #5A6A70;
+  --sidebar: #F8F6F3;
+  --sidebar-foreground: #3A4A3A;
+  --sidebar-primary: #6B7F6B;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8E6E1;
+  --sidebar-accent-foreground: #3A4A3A;
+  --sidebar-border: #E0DDD6;
+  --sidebar-ring: #A8B4A0;
+}
+
+.dark {
+  --background: #2A3A2A; /* Dark green background */
+  --foreground: #F0EDE8;
+  --card: #3A4A3A;
+  --card-foreground: #F0EDE8;
+  --popover: #3A4A3A;
+  --popover-foreground: #F0EDE8;
+  --primary: #A8B4A0; /* Lighter green for dark mode */
+  --primary-foreground: #2A3A2A;
+  --secondary: #4A5A4A;
+  --secondary-foreground: #F0EDE8;
+  --muted: #4A5A4A;
+  --muted-foreground: #A8B4A0;
+  --accent: #C8A89A;
+  --accent-foreground: #2A3A2A;
+  --destructive: #D4756B;
+  --border: #4A5A4A;
+  --input: #4A5A4A;
+  --ring: #A8B4A0;
+  --chart-1: #A8B4A0;
+  --chart-2: #C8A89A;
+  --chart-3: #8C7B6F;
+  --chart-4: #6B7F6B;
+  --chart-5: #5A6A70;
+  --sidebar: #2A3A2A;
+  --sidebar-foreground: #F0EDE8;
+  --sidebar-primary: #A8B4A0;
+  --sidebar-primary-foreground: #2A3A2A;
+  --sidebar-accent: #4A5A4A;
+  --sidebar-accent-foreground: #F0EDE8;
+  --sidebar-border: #4A5A4A;
+  --sidebar-ring: #A8B4A0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom wellness wheel styles */
+.wellness-wheel {
+  filter: drop-shadow(0 4px 12px rgba(107, 127, 107, 0.15));
+}
+
+.wellness-segment {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.wellness-segment:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Gentle animations */
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.gentle-pulse {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.gentle-float {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
